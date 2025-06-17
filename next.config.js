@@ -1,6 +1,7 @@
 module.exports = {
-  basePath: process.env.NODE_ENV === 'production' ? '/YOUR_REPO_NAME' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/YOUR_REPO_NAME/' : '',
+  // Удаляем или исправляем basePath и assetPrefix, так как они не нужны на Vercel
+  // basePath: '',
+  // assetPrefix: '',
   images: {
     unoptimized: true,
   },
