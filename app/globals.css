@@ -54,7 +54,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -67,6 +67,7 @@ body {
   display: inline-flex;
   align-items: center;
   height: 100%;
+  font-size: 0.8rem
 }
 
 .nav-link:hover {
@@ -240,4 +241,76 @@ body {
   background-color: var(--accent);
   color: #000;
   border-color: var(--accent);
+}
+
+/* Стили для страниц входа и регистрации */
+.logo-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.logo-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-field {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 0;
+  color: var(--foreground);
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: var(--accent);
+}
+
+.error-text {
+  color: #ff4d4f;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.login-btn {
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.signup-link {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.accent-link {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.accent-link:hover {
+  text-decoration: underline;
 }

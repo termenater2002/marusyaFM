@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import AICard from "./components/AICard";
 import { aiData, categories } from "./data/ai";
 
-export default function Home() {
+export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState(1);
   const [sortBy, setSortBy] = useState("rating");
   const [isSortDropdownOpen, setIsSortDropdownOpen] = useState(false);

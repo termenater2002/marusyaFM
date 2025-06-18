@@ -1,11 +1,19 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   return (
     <header className="header">
-      <div className="logo">
+      <Link href="/" className="logo">
+        <Image 
+          src="/logo.svg" 
+          alt="AI Space" 
+          width={30} 
+          height={30} 
+          className="mr-2"
+        />
         AI SPACE
-      </div>
+      </Link>
       
       <nav className="nav-links">
         <Link href="/" className="nav-link">

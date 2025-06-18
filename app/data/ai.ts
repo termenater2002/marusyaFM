@@ -42,6 +42,16 @@ export const aiData = [
     ],
     rating: 9.3,
     description: "Открытая модель машинного обучения для генерации цифровых изображений из текстовых описаний."
+  },
+  {
+    id: 5,
+    name: "АНГЕЛ ХРАНИТЕЛЬ СВО",
+    image: "/images/stablediffusion.jpg",
+    tags: [
+      { id: 3, name: "Графическая" },
+    ],
+    rating: 9.3,
+    description: "ЗАЩИЩАЕТ ГОЙДУ"
   }
 ];
 
