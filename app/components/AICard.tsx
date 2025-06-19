@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 interface Tag {
   id: number;
@@ -13,9 +14,55 @@ interface AICardProps {
   tags: Tag[];
   rating: number;
   description: string;
+  isFavorite?: boolean;
+  onFavoriteToggle?: () => void;
 }
 
-export default function AICard({ id, name, image, tags, rating, description }: AICardProps) {
+export default function AICard({ 
+  id, 
+  name, 
+  image, 
+  tags, 
+  rating, 
+  description, 
+  isFavorite: propIsFavorite,
+  onFavoriteToggle 
+}: AICardProps) {
+  // Состояние для отслеживания избранного
+  const [isFavorite, setIsFavorite] = useState(false);
+  
+  // Синхронизируем с пропсами или localStorage при монтировании
+  useEffect(() => {
+    if (propIsFavorite !== undefined) {
+      setIsFavorite(propIsFavorite);
+    } else {
+      const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+      setIsFavorite(favorites.includes(id));
+    }
+  }, [id, propIsFavorite]);
+  
+  // Функция для переключения избранного
+  const toggleFavorite = () => {
+    // Если есть callback от родителя, используем его
+    if (onFavoriteToggle) {
+      onFavoriteToggle();
+      return;
+    }
+    
+    // Иначе обрабатываем сами
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    let updatedFavorites;
+    
+    if (isFavorite) {
+      updatedFavorites = favorites.filter((favId: number) => favId !== id);
+    } else {
+      updatedFavorites = [...favorites, id];
+    }
+    
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <div className="card">
       <div className="relative h-64 w-full">
@@ -44,7 +91,12 @@ export default function AICard({ id, name, image, tags, rating, description }: A
           <Link href={`/ai/${id}`}>
             <button className="filter-button">ДЕТАЛИ</button>
           </Link>
-          <button className="filter-button">ДОБАВИТЬ В ИЗБРАННОЕ</button>
+          <button 
+            className={`filter-button favorite-button ${isFavorite ? 'favorite-active' : ''}`}
+            onClick={toggleFavorite}
+          >
+            {isFavorite ? 'УБРАТЬ ИЗ ИЗБРАННОГО' : 'ДОБАВИТЬ В ИЗБРАННОЕ'}
+          </button>
         </div>
       </div>
     </div>

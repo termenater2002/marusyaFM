@@ -400,3 +400,16 @@ body {
   --card-background: #292929;
   --border-color: #333333;
 }
+
+.favorite-button.favorite-active {
+  background-color: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+.empty-favorites {
+  padding: 3rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 8px;
+  margin: 2rem 0;
+}
