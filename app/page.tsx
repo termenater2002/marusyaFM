@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import AICard from "./components/AICard";
 import { aiData, categories } from "./data/ai";
 
@@ -37,7 +38,7 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 flex-grow">
         <div className="mb-6">
           <h1 className="text-2xl font-bold mb-6">
             Все Нейросети ({aiData.length})
@@ -107,6 +108,8 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }

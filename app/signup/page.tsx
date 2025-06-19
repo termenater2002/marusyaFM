@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Footer from "../components/Footer";
 
 export default function SignupPage() {
   const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <div className="logo-header">
         <Link href="/">
           <div className="logo">
@@ -108,6 +109,8 @@ export default function SignupPage() {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 }

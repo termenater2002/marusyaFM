@@ -12,7 +12,7 @@ export default function Header() {
           height={30} 
           className="mr-2"
         />
-        AI SPACE
+        <span className="hidden sm:inline">AI SPACE</span>
       </Link>
       
       <nav className="nav-links">
