@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
           
           <div className="contact-info text-center md:text-right">
-            <p className="mb-1">© 2025 AI SPACE</p>
+            <p className="mb-1">© 2025 MarusyaFM</p>
             <div className="contact-links">
               <a href="mailto:termenater2005@yandex.ru" className="contact-link">
                 Email
